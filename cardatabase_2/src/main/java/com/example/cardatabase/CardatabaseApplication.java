@@ -1,9 +1,6 @@
 package com.example.cardatabase;
 
-import com.example.cardatabase.domain.Car;
-import com.example.cardatabase.domain.CarRepository;
-import com.example.cardatabase.domain.Owner;
-import com.example.cardatabase.domain.OwnerRepository;
+import com.example.cardatabase.domain.*;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.boot.CommandLineRunner;
@@ -19,10 +16,12 @@ public class CardatabaseApplication implements CommandLineRunner {
     // 생성자 주입 부분
     private final CarRepository repository;
     private final OwnerRepository ownerRepository;
+    private final AppUserRepository appUserRepository;
 
-    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository) {
+    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository,  AppUserRepository appUserRepository) {
         this.repository = repository;
         this.ownerRepository = ownerRepository;
+        this.appUserRepository = appUserRepository;
     }
 
 
