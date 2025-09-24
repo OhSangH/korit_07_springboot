@@ -16,12 +16,12 @@ public class CardatabaseApplication implements CommandLineRunner {
     // 생성자 주입 부분
     private final CarRepository repository;
     private final OwnerRepository ownerRepository;
-    private final AppUserRepository appUserRepository;
+    private final AppUserRepository userRepository;
 
-    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository,  AppUserRepository appUserRepository) {
+    public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository,  AppUserRepository userRepository) {
         this.repository = repository;
         this.ownerRepository = ownerRepository;
-        this.appUserRepository = appUserRepository;
+        this.userRepository = userRepository;
     }
 
 
