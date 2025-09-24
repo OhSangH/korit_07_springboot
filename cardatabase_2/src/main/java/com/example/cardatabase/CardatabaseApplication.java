@@ -16,7 +16,7 @@ public class CardatabaseApplication implements CommandLineRunner {
     // 생성자 주입 부분
     private final CarRepository repository;
     private final OwnerRepository ownerRepository;
-    private final AppUserRepository userRepository;
+        private final AppUserRepository userRepository;
 
     public CardatabaseApplication(CarRepository repository, OwnerRepository ownerRepository,  AppUserRepository userRepository) {
         this.repository = repository;
@@ -46,5 +46,10 @@ public class CardatabaseApplication implements CommandLineRunner {
         for (Car car : repository.findAll()) {
             logger.info("brand : {}, model : {}", car.getBrand(), car.getModel());
         }
+
+        // AppUser 더미 데이터 추가
+        userRepository.save(new AppUser("user", "$2a$12$I63QjoME9KM/ikFFfE7leeiouhGda0/P0uWWu.yl.xwoPc.DQ6o4e", "USER"));
+        userRepository.save(new AppUser("admin", "$2a$12$oq7BIh9UY4j3cCreTQLYnudBGMRqVIKyybPCbmeTI.yQc4XNrXLIK", "ADMIN"));
+
     }
 }
