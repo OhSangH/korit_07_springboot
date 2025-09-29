@@ -36,4 +36,4 @@ out/
 ### VS Code ###
 .vscode/
 
-src/main/java/com/example/cardatabase/SecurityConfig.java
+application.properties
