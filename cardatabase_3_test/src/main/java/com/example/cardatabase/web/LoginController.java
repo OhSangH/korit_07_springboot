@@ -28,7 +28,7 @@ public class LoginController {
 
         Authentication auth = authenticationManager.authenticate(creds);
 
-        // 토큰 생서
+        // 토큰 생성
         String jwts = jwtService.getToken(auth.getName());
 
         return ResponseEntity
