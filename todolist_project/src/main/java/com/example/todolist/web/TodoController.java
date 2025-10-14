@@ -3,9 +3,7 @@ package com.example.todolist.web;
 import com.example.todolist.domain.Todo;
 import com.example.todolist.dto.TodoRequest;
 import com.example.todolist.service.TodoService;
-import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
