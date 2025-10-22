@@ -54,24 +54,24 @@ public class SecurityConfig {
 
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        // 프론트 연결을 위해 모든 접근 허용
-        http.csrf((csrf) -> csrf.disable())
-                .cors(withDefaults())
-                .authorizeHttpRequests(authReq ->
-                        authReq.anyRequest().permitAll());
-
-
-
+        // 개발중 프론트 연결을 위해 모든 접근 허용
 //        http.csrf((csrf) -> csrf.disable())
 //                .cors(withDefaults())
-//                .sessionManagement(sessionManagement ->
-//                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-//                .authorizeHttpRequests(authorizeRequests ->
-//                        authorizeRequests.requestMatchers(HttpMethod.POST, "/login").permitAll().anyRequest().authenticated())
-//                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
-//                .exceptionHandling(exceptionHandling ->
-//                        exceptionHandling.authenticationEntryPoint(exceptionHandler))
-//        ;
+//                .authorizeHttpRequests(authReq ->
+//                        authReq.anyRequest().permitAll());
+
+
+        // 로그인 핸드 포인트 POST 요청 제외 나머지 인증 필요
+        http.csrf((csrf) -> csrf.disable())
+                .cors(withDefaults())
+                .sessionManagement(sessionManagement ->
+                        sessionManagement.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
+                .authorizeHttpRequests(authorizeRequests ->
+                        authorizeRequests.requestMatchers(HttpMethod.POST, "/login").permitAll().anyRequest().authenticated())
+                .addFilterBefore(authenticationFilter, UsernamePasswordAuthenticationFilter.class)
+                .exceptionHandling(exceptionHandling ->
+                        exceptionHandling.authenticationEntryPoint(exceptionHandler))
+        ;
         return http.build();
     }
 
