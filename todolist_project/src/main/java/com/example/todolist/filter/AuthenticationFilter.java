@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.filter;
 
 import com.example.todolist.service.JwtService;
 import com.example.todolist.service.UserDetailsServiceImpl;
@@ -6,8 +6,6 @@ import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
 import jakarta.servlet.http.HttpServletResponse;
-import lombok.AllArgsConstructor;
-import lombok.Data;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.HttpHeaders;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;

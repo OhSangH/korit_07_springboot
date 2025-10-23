@@ -1,5 +1,7 @@
-package com.example.todolist;
+package com.example.todolist.config;
 
+import com.example.todolist.filter.AuthenticationFilter;
+import com.example.todolist.handler.AuthEntryPoint;
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;

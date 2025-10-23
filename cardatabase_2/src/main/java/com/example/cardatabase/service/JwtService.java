@@ -13,8 +13,8 @@ import java.util.Date;
 @Component
 public class JwtService {
     // 1일(밀리초). 실제는 더 짧은게 좋다.
-    static final long EXPIRATION_TIME = 864_000_000;
-    static final String PREFIX = "Bearer";
+    static final long EXPIRATION_TIME = 86_400_000;
+    static final String PREFIX = "Bearer ";
 
     static final Key key = Keys.secretKeyFor(SignatureAlgorithm.HS256);
 

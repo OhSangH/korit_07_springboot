@@ -1,4 +1,4 @@
-package com.example.todolist;
+package com.example.todolist.handler;
 
 import jakarta.servlet.ServletException;
 import jakarta.servlet.http.HttpServletRequest;
