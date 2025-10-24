@@ -20,6 +20,4 @@ public class Item {
 
     @NonNull
     private Integer amount;
-
-
 }

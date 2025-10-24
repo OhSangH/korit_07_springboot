@@ -20,10 +20,10 @@ public class ShoppinglistApplication implements CommandLineRunner {
 
     @Override
     public void run(String... args) throws Exception {
-        Item i1 = new Item("1",4);
-        Item i2 = new Item("2",4);
-        Item i3 = new Item("3",4);
-        Item i4 = new Item("4",4);
+        Item i1 = new Item("제품 1",10);
+        Item i2 = new Item("제품 2",20);
+        Item i3 = new Item("제품 3",3);
+        Item i4 = new Item("제품 4",70);
 
         itemRepository.save(i1);
         itemRepository.save(i2);
